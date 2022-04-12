@@ -9,9 +9,7 @@ export default function PreparingTea() {
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">Fazendo o chá</Typography>
         </Box>
-        <Grid item xs={12} md={6} lg={8}>
-          <PreparingTeaContent />
-        </Grid>
+        <PreparingTeaContent />
       </Container>
     </Page>
   );
