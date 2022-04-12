@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
 // components
 import Page from '../components/Page';
-import { ProductList } from '../sections/@dashboard/products';
+import TeaList from '../sections/TeaList';
 //
-import PRODUCTS from '../_mocks_/products';
+import TEAS from '../_mocks_/teaList';
 import Iconify from '../components/Iconify';
 
 const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
@@ -49,7 +49,7 @@ export default function SearchTea() {
         </div>
         <br />
         <div>
-          <ProductList products={PRODUCTS} />
+          <TeaList teas={TEAS} />
         </div>
       </Container>
     </Page>
