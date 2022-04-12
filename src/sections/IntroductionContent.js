@@ -1,4 +1,4 @@
-import { Link as RouterLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 // material
 import { Box, Card, Button, Divider, CardHeader, CardContent } from '@mui/material';
@@ -6,13 +6,15 @@ import Iconify from '../components/Iconify';
 import { TEA_INFORMATION, MAX_TEA_INFO } from '../_mocks_/introduction';
 
 export default function IntroductionContent() {
+  const navigate = useNavigate();
+
   const [infoIndex, setInfoIndex] = useState(0);
 
   const handleNextInfo = () => {
     if (infoIndex < MAX_TEA_INFO) {
       setInfoIndex(infoIndex + 1);
     } else {
-      // need to do a router to the next page
+      navigate('/dashboard/escolhendo-cha');
       setInfoIndex(0);
     }
   };
