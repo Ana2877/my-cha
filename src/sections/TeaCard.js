@@ -1,6 +1,7 @@
 import { Link as RouterLink } from 'react-router-dom';
 import { Box, Card, Link, Typography, Stack } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import PropTypes from 'prop-types';
 
 const TeaImgStyle = styled('img')({
   top: 0,
@@ -10,8 +11,19 @@ const TeaImgStyle = styled('img')({
   position: 'absolute'
 });
 
-export default function TeaCard({ tea }) {
+TeaCard.propTypes = {
+  tea: PropTypes.object,
+  onOpenCardId: PropTypes.func
+};
+
+export default function TeaCard({ tea, onOpenCardId }) {
   const { name, description, image } = tea;
+
+  const hanldeClick = (e) => {
+    e.preventDefault();
+    onOpenCardId(tea.id);
+    console.log('change id');
+  };
 
   return (
     <Card>
@@ -20,7 +32,7 @@ export default function TeaCard({ tea }) {
       </Box>
 
       <Stack spacing={2} sx={{ p: 3 }}>
-        <Link to="#" color="inherit" underline="hover" component={RouterLink}>
+        <Link to="#" color="inherit" underline="hover" component={RouterLink} onClick={hanldeClick}>
           <Typography variant="subtitle1" noWrap>
             {name}
           </Typography>

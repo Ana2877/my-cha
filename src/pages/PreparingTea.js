@@ -1,16 +1,16 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-import IntroductionContent from '../sections/IntroductionContent';
+import PreparingTeaContent from '../sections/PreparingTeaContent';
 import Page from '../components/Page';
 
-export default function Introduction() {
+export default function PreparingTea() {
   return (
     <Page title="Introduction | Minimal-UI">
       <Container>
         <Box sx={{ pb: 5 }}>
-          <Typography variant="h4">Introdução</Typography>
+          <Typography variant="h4">Fazendo o chá</Typography>
         </Box>
         <Grid item xs={12} md={6} lg={8}>
-          <IntroductionContent />
+          <PreparingTeaContent />
         </Grid>
       </Container>
     </Page>

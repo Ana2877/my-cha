@@ -12,6 +12,7 @@ import User from './pages/User';
 import NotFound from './pages/Page404';
 import Introduction from './pages/Introduction';
 import SearchTea from './pages/SearchTea';
+import PreparingTea from './pages/PreparingTea';
 
 // ----------------------------------------------------------------------
 
@@ -26,8 +27,9 @@ export default function Router() {
         { path: 'products', element: <Products /> },
         { path: 'introducao', element: <Introduction /> },
         { path: 'escolhendo-cha', element: <SearchTea /> },
-        { path: 'fazendo-cha', element: <Blog /> },
-        { path: 'blog', element: <Blog /> }
+        { path: 'fazendo-cha', element: <PreparingTea /> },
+        { path: 'blog', element: <Blog /> },
+        { path: 'informacao-cha', element: <PreparingTea /> }
       ]
     },
     {

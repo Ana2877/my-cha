@@ -1,10 +1,7 @@
 import { useState } from 'react';
-// material
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
-// components
 import Page from '../components/Page';
 import TeaList from '../sections/TeaList';
-//
 import TEAS from '../_mocks_/teaList';
 import Iconify from '../components/Iconify';
 
@@ -23,6 +20,14 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
 
 export default function SearchTea() {
   const [filterName, setFilterName] = useState('');
+
+  const [openCardId, setOpenCardId] = useState(0);
+
+  const hasOpenCard = () => openCardId > 0;
+
+  const onOpenCardId = (id) => {
+    setOpenCardId(id);
+  };
 
   const handleFilterByName = (event) => {
     setFilterName(event.target.value);
@@ -48,9 +53,13 @@ export default function SearchTea() {
           />
         </div>
         <br />
-        <div>
-          <TeaList teas={TEAS} />
-        </div>
+        {hasOpenCard() ? (
+          <div>Olá mundo</div>
+        ) : (
+          <div>
+            <TeaList teas={TEAS} onOpenCardId={onOpenCardId} />
+          </div>
+        )}
       </Container>
     </Page>
   );

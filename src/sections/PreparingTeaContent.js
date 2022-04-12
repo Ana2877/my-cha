@@ -3,13 +3,13 @@ import { useState } from 'react';
 // material
 import { Box, Card, Button, Divider, CardHeader, CardContent } from '@mui/material';
 import Iconify from '../components/Iconify';
-import { TEA_INFORMATION, MAX_TEA_INFO } from '../_mocks_/introduction';
+import { PREPARING_TEA, MAX_PREPARING_TEA } from '../_mocks_/preparingTea';
 
 export default function IntroductionContent() {
   const [infoIndex, setInfoIndex] = useState(0);
 
   const handleNextInfo = () => {
-    if (infoIndex < MAX_TEA_INFO) {
+    if (infoIndex < MAX_PREPARING_TEA) {
       setInfoIndex(infoIndex + 1);
     } else {
       // need to do a router to the next page
@@ -19,9 +19,9 @@ export default function IntroductionContent() {
 
   return (
     <Card>
-      <CardHeader title={TEA_INFORMATION[infoIndex].title} />
+      <CardHeader title={PREPARING_TEA[infoIndex].title} />
 
-      <CardContent>{TEA_INFORMATION[infoIndex].content}</CardContent>
+      <CardContent>{PREPARING_TEA[infoIndex].content}</CardContent>
 
       <Divider />
 
