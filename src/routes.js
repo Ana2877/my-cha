@@ -10,6 +10,8 @@ import Products from './pages/Products';
 import Blog from './pages/Blog';
 import User from './pages/User';
 import NotFound from './pages/Page404';
+import Introduction from './pages/Introduction';
+import SearchTea from './pages/SearchTea';
 
 // ----------------------------------------------------------------------
 
@@ -22,6 +24,9 @@ export default function Router() {
         { path: 'app', element: <DashboardApp /> },
         { path: 'user', element: <User /> },
         { path: 'products', element: <Products /> },
+        { path: 'introducao', element: <Introduction /> },
+        { path: 'escolhendo-cha', element: <SearchTea /> },
+        { path: 'fazendo-cha', element: <Blog /> },
         { path: 'blog', element: <Blog /> }
       ]
     },

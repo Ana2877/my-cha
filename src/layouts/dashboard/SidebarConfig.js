@@ -40,6 +40,21 @@ const sidebarConfig = [
     title: 'Not found',
     path: '/404',
     icon: getIcon('eva:alert-triangle-fill')
+  },
+  {
+    title: 'Introdução',
+    path: '/dashboard/introducao',
+    icon: getIcon('eva:home-outline')
+  },
+  {
+    title: 'Escolhendo chá',
+    path: '/dashboard/escolhendo-cha',
+    icon: getIcon('eva:search-fill')
+  },
+  {
+    title: 'Fazendo chá',
+    path: '/dashboard/fazendo-cha',
+    icon: getIcon('simple-icons:mocha')
   }
 ];
 
