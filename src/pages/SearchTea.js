@@ -1,9 +1,7 @@
-import { useFormik } from 'formik';
 import { useState } from 'react';
 // material
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
 // components
-import { maxWidth } from '@mui/system';
 import Page from '../components/Page';
 import { ProductList } from '../sections/@dashboard/products';
 //
