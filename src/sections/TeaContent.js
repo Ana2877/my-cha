@@ -10,7 +10,11 @@ const TeaImgStyle = styled('img')({
   position: 'absolute'
 });
 
-export default function TeaContent({ tea }) {
+export default function TeaContent({ tea, onClickToNextTea }) {
+  const handleClickToNextTea = () => {
+    onClickToNextTea(tea.id);
+  };
+
   return (
     <Card>
       <Box sx={{ pt: '20%', position: 'relative' }}>
@@ -29,7 +33,7 @@ export default function TeaContent({ tea }) {
           size="small"
           color="inherit"
           endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
-          // onClick={handleNextInfo}
+          onClick={handleClickToNextTea}
         >
           Próxima
         </Button>

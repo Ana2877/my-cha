@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
 import Page from '../components/Page';
 import TeaList from '../sections/TeaList';
+import TeaContent from '../sections/TeaContent';
 import TEAS from '../_mocks_/teaList';
 import Iconify from '../components/Iconify';
 
@@ -33,6 +34,12 @@ export default function SearchTea() {
     setFilterName(event.target.value);
   };
 
+  const onClickToNextTea = (id) => {
+    setOpenCardId(id + 1);
+  };
+
+  const getOpenTea = (id) => TEAS.find((element) => element.id === openCardId);
+
   return (
     <Page title="Dashboard: SearchTea | Minimal-UI">
       <Container>
@@ -54,7 +61,9 @@ export default function SearchTea() {
         </div>
         <br />
         {hasOpenCard() ? (
-          <div>Olá mundo</div>
+          <div>
+            <TeaContent tea={getOpenTea()} onClickToNextTea={onClickToNextTea} />
+          </div>
         ) : (
           <div>
             <TeaList teas={TEAS} onOpenCardId={onOpenCardId} />
