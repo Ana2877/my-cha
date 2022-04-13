@@ -18,6 +18,11 @@ export const PREPARING_TEA = [
     title: 'Como preparar decocção',
     content:
       'A decocção é feita quando a planta é fervida juntamente com a água, o que normalmente é preciso fazer com partes da planta que são mais duras e resistentes, como as raízes ou as cascas, por exemplo. Como fazer: deve-se adicionar as partes duras da planta numa panela com a água e deixar ferver entre 10 a 15 minutos, até que a água fique mais escura e aromática. Depois, deve-se desligar o fogo, tampar a panela e deixar amornar.'
+  },
+  {
+    title: 'Boa Sorte',
+    content:
+      'Agora é com você! Boa sorte na escolha do seu chá e na melhor maneira de fazê-lo, espero que esse site tenha sido útil para te ajudar.'
   }
 ];
 

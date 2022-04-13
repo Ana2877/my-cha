@@ -10,9 +10,13 @@ const TeaImgStyle = styled('img')({
   position: 'absolute'
 });
 
-export default function TeaContent({ tea, onClickToNextTea }) {
+export default function TeaContent({ tea, onClickToNextTea, onCloseTea }) {
   const handleClickToNextTea = () => {
     onClickToNextTea(tea.id);
+  };
+
+  const handleCloseTea = () => {
+    onCloseTea();
   };
 
   return (
@@ -20,6 +24,20 @@ export default function TeaContent({ tea, onClickToNextTea }) {
       <Box sx={{ pt: '20%', position: 'relative' }}>
         <TeaImgStyle alt={tea.name} src={tea.image} />
       </Box>
+
+      <Box sx={{ p: 2, textAlign: 'right' }}>
+        <Button
+          to="#"
+          size="medium"
+          color="inherit"
+          endIcon={<Iconify icon="eva:close-fill" />}
+          onClick={handleCloseTea}
+        >
+          Fechar
+        </Button>
+      </Box>
+
+      <Divider />
 
       <CardHeader title={tea.name} />
 

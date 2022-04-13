@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
 import Page from '../components/Page';
@@ -20,7 +21,8 @@ const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
 }));
 
 export default function SearchTea() {
-  const [filterName, setFilterName] = useState('');
+  const navigate = useNavigate();
+  // const [filterName, setFilterName] = useState('');
 
   const [openCardId, setOpenCardId] = useState(0);
 
@@ -30,15 +32,20 @@ export default function SearchTea() {
     setOpenCardId(id);
   };
 
-  const handleFilterByName = (event) => {
-    setFilterName(event.target.value);
+  const onCloseTea = () => {
+    setOpenCardId(0);
   };
+
+  // const handleFilterByName = (event) => {
+  //   setFilterName(event.target.value);
+  // };
 
   const onClickToNextTea = (id) => {
-    setOpenCardId(id + 1);
+    if (id < TEAS.length) setOpenCardId(id + 1);
+    else navigate('/dashboard/fazendo-cha');
   };
 
-  const getOpenTea = (id) => TEAS.find((element) => element.id === openCardId);
+  const getOpenTea = () => TEAS.find((element) => element.id === openCardId);
 
   return (
     <Page title="Dashboard: SearchTea | Minimal-UI">
@@ -47,7 +54,7 @@ export default function SearchTea() {
           Lista de Chás
         </Typography>
 
-        <div>
+        {/* <div>
           <SearchStyle
             value={filterName}
             onChange={handleFilterByName}
@@ -58,11 +65,15 @@ export default function SearchTea() {
               </InputAdornment>
             }
           />
-        </div>
+        </div> */}
         <br />
         {hasOpenCard() ? (
           <div>
-            <TeaContent tea={getOpenTea()} onClickToNextTea={onClickToNextTea} />
+            <TeaContent
+              tea={getOpenTea()}
+              onClickToNextTea={onClickToNextTea}
+              onCloseTea={onCloseTea}
+            />
           </div>
         ) : (
           <div>

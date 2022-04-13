@@ -14,8 +14,8 @@ export default function IntroductionContent() {
     if (infoIndex < MAX_TEA_INFO) {
       setInfoIndex(infoIndex + 1);
     } else {
-      navigate('/dashboard/escolhendo-cha');
       setInfoIndex(0);
+      navigate('/dashboard/escolhendo-cha');
     }
   };
 
