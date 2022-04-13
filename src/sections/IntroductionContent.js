@@ -1,16 +1,19 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 // material
 import { Box, Card, Button, Divider, CardHeader, CardContent } from '@mui/material';
 import Iconify from '../components/Iconify';
 import { TEA_INFORMATION, MAX_TEA_INFO } from '../_mocks_/introduction';
 
+const MINUTE_MS = 5000;
+
 export default function IntroductionContent() {
   const navigate = useNavigate();
 
   const [infoIndex, setInfoIndex] = useState(0);
+  const counterRef = useRef(0);
 
-  const handleNextInfo = () => {
+  const handleNextInfo = (infoIndex) => {
     if (infoIndex < MAX_TEA_INFO) {
       setInfoIndex(infoIndex + 1);
     } else {
@@ -18,6 +21,22 @@ export default function IntroductionContent() {
       navigate('/dashboard/escolhendo-cha');
     }
   };
+
+  const onNextInfo = () => {
+    handleNextInfo(counterRef.current);
+  };
+
+  useEffect(() => {
+    counterRef.current = infoIndex;
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNextInfo(counterRef.current);
+    }, MINUTE_MS);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Card>
@@ -33,7 +52,7 @@ export default function IntroductionContent() {
           size="small"
           color="inherit"
           endIcon={<Iconify icon="eva:arrow-ios-forward-fill" />}
-          onClick={handleNextInfo}
+          onClick={onNextInfo}
         >
           Próxima
         </Button>

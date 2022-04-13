@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Container, styled, Typography, OutlinedInput, InputAdornment } from '@mui/material';
 import Page from '../components/Page';
 import TeaList from '../sections/TeaList';
 import TeaContent from '../sections/TeaContent';
 import TEAS from '../_mocks_/teaList';
-import Iconify from '../components/Iconify';
+// import Iconify from '../components/Iconify';
 
 const SearchStyle = styled(OutlinedInput)(({ theme }) => ({
   width: 600,
@@ -25,6 +25,7 @@ export default function SearchTea() {
   // const [filterName, setFilterName] = useState('');
 
   const [openCardId, setOpenCardId] = useState(0);
+  const counterRef = useRef(0);
 
   const hasOpenCard = () => openCardId > 0;
 
@@ -36,13 +37,31 @@ export default function SearchTea() {
     setOpenCardId(0);
   };
 
+  const MINUTE_MS = 5000;
+
+  useEffect(() => {
+    counterRef.current = openCardId;
+  });
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      onClickToNextTea(counterRef.current);
+    }, MINUTE_MS);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // const handleFilterByName = (event) => {
   //   setFilterName(event.target.value);
   // };
 
   const onClickToNextTea = (id) => {
-    if (id < TEAS.length) setOpenCardId(id + 1);
-    else navigate('/dashboard/fazendo-cha');
+    if (id < TEAS.length) {
+      setOpenCardId(id + 1);
+    } else {
+      setOpenCardId(0);
+      navigate('/dashboard/fazendo-cha');
+    }
   };
 
   const getOpenTea = () => TEAS.find((element) => element.id === openCardId);
