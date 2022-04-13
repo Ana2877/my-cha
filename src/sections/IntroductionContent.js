@@ -5,7 +5,7 @@ import { Box, Card, Button, Divider, CardHeader, CardContent } from '@mui/materi
 import Iconify from '../components/Iconify';
 import { TEA_INFORMATION, MAX_TEA_INFO } from '../_mocks_/introduction';
 
-const MINUTE_MS = 5000;
+const MINUTE_MS = 120000;
 
 export default function IntroductionContent() {
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import { Box, Card, Button, Divider, CardHeader, CardContent } from '@mui/materi
 import Iconify from '../components/Iconify';
 import { PREPARING_TEA, MAX_PREPARING_TEA } from '../_mocks_/preparingTea';
 
-const MINUTE_MS = 5000;
+const MINUTE_MS = 120000;
 
 export default function IntroductionContent() {
   const [infoIndex, setInfoIndex] = useState(0);
