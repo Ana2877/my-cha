@@ -11,19 +11,13 @@ import PreparingTea from './pages/PreparingTea';
 export default function Router() {
   return useRoutes([
     {
-      path: '/dashboard',
+      path: '/',
       element: <DashboardLayout />,
       children: [
         { path: 'introducao', element: <Introduction /> },
         { path: 'escolhendo-cha', element: <SearchTea /> },
-        { path: 'fazendo-cha', element: <PreparingTea /> }
-      ]
-    },
-    {
-      path: '/',
-      element: <DashboardLayout />,
-      children: [
-        { path: '/', element: <Navigate to="/dashboard/introducao" /> },
+        { path: 'fazendo-cha', element: <PreparingTea /> },
+        { path: '/', element: <Navigate to="/introducao" /> },
         { path: '404', element: <NotFound /> },
         { path: '*', element: <Navigate to="/404" /> }
       ]

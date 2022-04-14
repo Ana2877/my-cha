@@ -41,7 +41,7 @@ export default function SearchTea() {
       setOpenCardId(id + 1);
     } else {
       setOpenCardId(0);
-      navigate('/dashboard/fazendo-cha');
+      navigate('/fazendo-cha');
     }
   };
 

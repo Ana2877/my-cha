@@ -8,17 +8,17 @@ const getIcon = (name) => <Iconify icon={name} width={22} height={22} />;
 const sidebarConfig = [
   {
     title: 'Introdução',
-    path: '/dashboard/introducao',
+    path: '/introducao',
     icon: getIcon('eva:home-outline')
   },
   {
     title: 'Escolhendo chá',
-    path: '/dashboard/escolhendo-cha',
+    path: '/escolhendo-cha',
     icon: getIcon('eva:search-fill')
   },
   {
     title: 'Fazendo chá',
-    path: '/dashboard/fazendo-cha',
+    path: '/fazendo-cha',
     icon: getIcon('simple-icons:mocha')
   }
 ];

@@ -18,7 +18,7 @@ export default function IntroductionContent() {
       setInfoIndex(infoIndex + 1);
     } else {
       setInfoIndex(0);
-      navigate('/dashboard/escolhendo-cha');
+      navigate('/escolhendo-cha');
     }
   };
 
