@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import PreparingTeaContent from '../sections/PreparingTeaContent';
 import Page from '../components/Page';
 
