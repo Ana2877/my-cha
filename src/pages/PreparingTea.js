@@ -4,7 +4,7 @@ import Page from '../components/Page';
 
 export default function PreparingTea() {
   return (
-    <Page title="Introduction | Minimal-UI">
+    <Page title="MyCha: Fazendo o chá">
       <Container>
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">Fazendo o chá</Typography>

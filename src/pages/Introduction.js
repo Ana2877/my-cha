@@ -4,7 +4,7 @@ import Page from '../components/Page';
 
 export default function Introduction() {
   return (
-    <Page title="Introduction | Minimal-UI">
+    <Page title="MyCha: Introdução">
       <Container>
         <Box sx={{ pb: 5 }}>
           <Typography variant="h4">Introdução</Typography>

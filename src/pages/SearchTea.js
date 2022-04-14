@@ -48,7 +48,7 @@ export default function SearchTea() {
   const getOpenTea = () => TEAS.find((element) => element.id === openCardId);
 
   return (
-    <Page title="Dashboard: SearchTea | Minimal-UI">
+    <Page title="MyCha: SearchTea">
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
           Lista de Chás
